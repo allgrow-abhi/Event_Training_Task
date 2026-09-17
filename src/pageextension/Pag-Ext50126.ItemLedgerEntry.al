@@ -1,16 +1,15 @@
-//Task 2
+// Task 10
 
-// pageextension 50128 "Vendor Custom Field" extends "Vendor Ledger Entries"
+// pageextension 50126 "Item Ledger Entry" extends "Item Ledger Entries"
 // {
 //     layout
 //     {
-//         addafter(Amount)
+//         addafter("Item No.")
 //         {
-//             field("Vendor Code"; Rec."Vendor Code")
+//             field("Item Code AS"; Rec."Item Code AS")
 //             {
 //                 ApplicationArea = all;
 //             }
-
 //         }
 //         // Add changes to page layout here
 //     }

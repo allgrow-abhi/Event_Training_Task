@@ -1,11 +1,13 @@
-tableextension 50127 "Item Journal Line Ext" extends "Item Journal Line"
+//Task 2
+
+tableextension 50128 "Vendor Ledger Custom Field" extends "Vendor Ledger Entry"
 {
     fields
     {
-        field(50000; "Item Code AS"; Code[50])
+        field(50129; "Vendor Code"; Code[20])
         {
+            Caption = 'Vendor Code';
             DataClassification = ToBeClassified;
-            Caption = 'Item Code AS';
         }
         // Add changes to table fields here
     }

@@ -1,4 +1,4 @@
-// codeunit 50131 "Event Sub"
+// codeunit 50131 "Event Sub Task 2"
 // {
 //     [EventSubscriber(ObjectType::Table, Database::"Gen. Journal Line", OnAfterCopyGenJnlLineFromPurchHeader, '', false, false)]
 //     local procedure OnAfterCopyGenJnlLineFromPurchHeader(PurchaseHeader: Record "Purchase Header"; var GenJournalLine: Record "Gen. Journal Line")

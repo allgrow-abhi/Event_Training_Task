@@ -1,13 +1,13 @@
-//Task 2
+//Task 10
 
-// tableextension 50128 "Vendor Ledger Custom Field" extends "Vendor Ledger Entry"
+// tableextension 50126 "Item Ledger Entry Ext" extends "Item Ledger Entry"
 // {
 //     fields
 //     {
-//         field(50129; "Vendor Code"; Code[20])
+//         field(50000; "Item Code AS"; Code[50])
 //         {
-//             Caption = 'Vendor Code';
 //             DataClassification = ToBeClassified;
+//             Caption = 'Item Code AS';
 //         }
 //         // Add changes to table fields here
 //     }
