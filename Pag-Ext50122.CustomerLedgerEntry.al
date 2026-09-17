@@ -1,22 +1,24 @@
-pageextension 50122 "Customer Ledger Entry" extends "Customer Ledger Entries"
-{
-    layout
-    {
-        addafter("Document No.")
-        {
-            field("Sales Code"; Rec."Sales Code")
-            {
-                ApplicationArea = all;
-            }
-        }
-        // Add changes to page layout here
-    }
+// Task 7
 
-    actions
-    {
-        // Add changes to page actions here
-    }
+// pageextension 50122 "Customer Ledger Entry" extends "Customer Ledger Entries"
+// {
+//     layout
+//     {
+//         addafter("Document No.")
+//         {
+//             field("Sales Code"; Rec."Sales Code")
+//             {
+//                 ApplicationArea = all;
+//             }
+//         }
+//         // Add changes to page layout here
+//     }
 
-    var
-        myInt: Integer;
-}
+//     actions
+//     {
+//         // Add changes to page actions here
+//     }
+
+//     var
+//         myInt: Integer;
+// }

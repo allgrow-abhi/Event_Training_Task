@@ -1,25 +1,27 @@
-tableextension 50122 "Customer Ledger Entry Ext" extends "Cust. Ledger Entry"
-{
-    fields
-    {
-        field(50000; "Sales Code"; Code[50])
-        {
-            DataClassification = ToBeClassified;
-            Caption = 'Sales Code';
-        }
-        // Add changes to table fields here
-    }
+//Task 9
 
-    keys
-    {
-        // Add changes to keys here
-    }
+// tableextension 50122 "Customer Ledger Entry Ext" extends "Cust. Ledger Entry"
+// {
+//     fields
+//     {
+//         field(50000; "Sales Code"; Code[50])
+//         {
+//             DataClassification = ToBeClassified;
+//             Caption = 'Sales Code';
+//         }
+//         // Add changes to table fields here
+//     }
 
-    fieldgroups
-    {
-        // Add changes to field groups here
-    }
+//     keys
+//     {
+//         // Add changes to keys here
+//     }
 
-    var
-        myInt: Integer;
-}
+//     fieldgroups
+//     {
+//         // Add changes to field groups here
+//     }
+
+//     var
+//         myInt: Integer;
+// }
