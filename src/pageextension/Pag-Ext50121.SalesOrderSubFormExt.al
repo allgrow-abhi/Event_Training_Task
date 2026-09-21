@@ -47,3 +47,5 @@ pageextension 50121 "Sales Order SubForm Ext" extends "Sales Order Subform"
     var
         myInt: Integer;
 }
+
+

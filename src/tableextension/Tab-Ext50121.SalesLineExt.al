@@ -54,3 +54,5 @@ tableextension 50121 "Sales Line Ext" extends "Sales Line"
     var
         myInt: Integer;
 }
+
+

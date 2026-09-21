@@ -6,6 +6,6 @@ codeunit 50127 "Event Sub Task 14"
         if Rec."Req. Delivery Date" <= Today then begin
             Error('Date is Out of Range');
         end;
-        Rec."Shipment Date" := Rec."Req. Delivery Date" - 2;
+        Rec.Validate("Shipment Date", Rec."Req. Delivery Date" - 2);
     end;
 }
