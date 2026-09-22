@@ -14,13 +14,15 @@ codeunit 50126 "Event Sub Task 13"
         overdueInvoices := 0;
         customerLedgerEntry.Reset();
         customerLedgerEntry.SetRange("Customer No.", SalesHeader."Sell-to Customer No.");
-        // customerLedgerEntry.SetRange("Document Type", SalesHeader."Document Type"::Invoice);
+        customerLedgerEntry.SetRange("Document Type", SalesHeader."Document Type"::Invoice);
         customerLedgerEntry.SetFilter("Due Date", '<%1', Today);
         // customerLedgerEntry.SetRange(Open, true);
         customerLedgerEntry.SetAutoCalcFields("Remaining Amount");
         if customerLedgerEntry.FindSet() then
             repeat
-
+                Message('Overdue Amount %1, OverdueInvoices %2', overdueAmount, overdueInvoices);
+                overdueAmount := overdueAMount + customerLedgerEntry."Remaining Amount";
+                overdueInvoices := OverdueInvoices + 1;
             until customerLedgerEntry.Next() = 0;
 
         AccessControlRec.SetRange("User Security ID", UserSecurityId());
