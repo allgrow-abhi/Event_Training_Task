@@ -1,67 +1,67 @@
-table 50131 "Log Table"
-{
-    DataClassification = ToBeClassified;
+// table 50131 "Log Table"
+// {
+//     DataClassification = ToBeClassified;
 
-    fields
-    {
-        field(1; "Entry No."; Integer)
-        {
-            DataClassification = ToBeClassified;
-            Caption = 'Entry No.';
-            AutoIncrement = true;
-        }
-        field(2; "User Name"; Text[100])
-        {
-            DataClassification = ToBeClassified;
-            Caption = 'User Name';
-        }
-        field(3; "Time"; Time)
-        {
-            DataClassification = ToBeClassified;
-            Caption = 'Time';
-        }
-        field(4; "Action"; Option)
-        {
-            DataClassification = ToBeClassified;
-            Caption = 'Action';
-            OptionMembers = Release,Reopen;
-        }
-    }
+//     fields
+//     {
+//         field(1; "Entry No."; Integer)
+//         {
+//             DataClassification = ToBeClassified;
+//             Caption = 'Entry No.';
+//             AutoIncrement = true;
+//         }
+//         field(2; "User Name"; Text[100])
+//         {
+//             DataClassification = ToBeClassified;
+//             Caption = 'User Name';
+//         }
+//         field(3; "Time"; Time)
+//         {
+//             DataClassification = ToBeClassified;
+//             Caption = 'Time';
+//         }
+//         field(4; "Action"; Option)
+//         {
+//             DataClassification = ToBeClassified;
+//             Caption = 'Action';
+//             OptionMembers = Release,Reopen;
+//         }
+//     }
 
-    keys
-    {
-        key(PK; "Entry No.")
-        {
-            Clustered = true;
-        }
-    }
+//     keys
+//     {
+//         key(PK; "Entry No.")
+//         {
+//             Clustered = true;
+//         }
+//     }
 
-    fieldgroups
-    {
-        // Add changes to field groups here
-    }
+//     fieldgroups
+//     {
+//         // Add changes to field groups here
+//     }
 
-    var
-        myInt: Integer;
+//     var
+//         myInt: Integer;
 
-    trigger OnInsert()
-    begin
+//     trigger OnInsert()
+//     begin
 
-    end;
+//     end;
 
-    trigger OnModify()
-    begin
+//     trigger OnModify()
+//     begin
 
-    end;
+//     end;
 
-    trigger OnDelete()
-    begin
+//     trigger OnDelete()
+//     begin
 
-    end;
+//     end;
 
-    trigger OnRename()
-    begin
+//     trigger OnRename()
+//     begin
 
-    end;
+//     end;
 
-}
+// }

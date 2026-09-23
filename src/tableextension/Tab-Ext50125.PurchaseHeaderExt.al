@@ -79,3 +79,31 @@
 //     var
 //         myInt: Integer;
 // }
+
+
+//Task 22
+tableextension 50125 "Purchase Header Ext" extends "Purchase Header"
+{
+    fields
+    {
+        field(50000; "Item Category"; Text[100])
+        {
+            DataClassification = ToBeClassified;
+            Caption = 'Item Category';
+        }
+        // Add changes to table fields here
+    }
+
+    keys
+    {
+        // Add changes to keys here
+    }
+
+    fieldgroups
+    {
+        // Add changes to field groups here
+    }
+
+    var
+        myInt: Integer;
+}
