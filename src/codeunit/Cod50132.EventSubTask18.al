@@ -6,6 +6,7 @@
 //         LogTableRec: Record "Log Table";
 //     begin
 
+//         LogTableRec.init();
 //         LogTableRec."User Name" := UserId;
 //         LogTableRec.Time := Time;
 //         LogTableRec.Action := LogTableRec.Action::Release;
