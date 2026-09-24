@@ -50,29 +50,29 @@
 
 //Task 15
 
-pageextension 50121 "Sales Order SubForm EXt" extends "Sales Order Subform"
-{
-    layout
-    {
-        addafter(Description)
-        {
-            field("Project Code"; Rec."Project Code")
-            {
-                ApplicationArea = all;
-            }
-            field("Item Code"; Rec."Item Code")
-            {
-                ApplicationArea = all;
-            }
-        }
-        // Add changes to page layout here
-    }
+// pageextension 50121 "Sales Order SubForm EXt" extends "Sales Order Subform"
+// {
+//     layout
+//     {
+//         addafter(Description)
+//         {
+//             field("Project Code"; Rec."Project Code")
+//             {
+//                 ApplicationArea = all;
+//             }
+//             field("Item Code"; Rec."Item Code")
+//             {
+//                 ApplicationArea = all;
+//             }
+//         }
+//         // Add changes to page layout here
+//     }
 
-    actions
-    {
-        // Add changes to page actions here
-    }
+//     actions
+//     {
+//         // Add changes to page actions here
+//     }
 
-    var
-        myInt: Integer;
-}
+//     var
+//         myInt: Integer;
+// }
