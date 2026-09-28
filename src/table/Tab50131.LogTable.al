@@ -69,74 +69,74 @@
 
 //Task 29
 
-table 50131 "Log Table"
-{
-    DataClassification = ToBeClassified;
+// table 50131 "Log Table"
+// {
+//     DataClassification = ToBeClassified;
 
-    fields
-    {
-        field(1; "Entry No."; Integer)
-        {
-            DataClassification = ToBeClassified;
-            Caption = 'Entry No.';
-            AutoIncrement = true;
-        }
-        field(2; "Old Credit Limit"; Decimal)
-        {
-            DataClassification = ToBeClassified;
-            Caption = 'Old Credit Limit';
-        }
-        field(3; "New Credit Limit"; Decimal)
-        {
-            DataClassification = ToBeClassified;
-            Caption = 'New Credit Limit';
-        }
-        field(4; " Date and Time"; DateTime)
-        {
-            DataClassification = ToBeClassified;
-            Caption = 'Date and Time';
-        }
-        field(5; "User Name"; Text[100])
-        {
-            DataClassification = ToBeClassified;
-            Caption = 'User Name';
-        }
-    }
+//     fields
+//     {
+//         field(1; "Entry No."; Integer)
+//         {
+//             DataClassification = ToBeClassified;
+//             Caption = 'Entry No.';
+//             AutoIncrement = true;
+//         }
+//         field(2; "Old Credit Limit"; Decimal)
+//         {
+//             DataClassification = ToBeClassified;
+//             Caption = 'Old Credit Limit';
+//         }
+//         field(3; "New Credit Limit"; Decimal)
+//         {
+//             DataClassification = ToBeClassified;
+//             Caption = 'New Credit Limit';
+//         }
+//         field(4; " Date and Time"; DateTime)
+//         {
+//             DataClassification = ToBeClassified;
+//             Caption = 'Date and Time';
+//         }
+//         field(5; "User Name"; Text[100])
+//         {
+//             DataClassification = ToBeClassified;
+//             Caption = 'User Name';
+//         }
+//     }
 
-    keys
-    {
-        key(PK; "Entry No.")
-        {
-            Clustered = true;
-        }
-    }
+//     keys
+//     {
+//         key(PK; "Entry No.")
+//         {
+//             Clustered = true;
+//         }
+//     }
 
-    fieldgroups
-    {
-        // Add changes to field groups here
-    }
+//     fieldgroups
+//     {
+//         // Add changes to field groups here
+//     }
 
-    var
-        myInt: Integer;
+//     var
+//         myInt: Integer;
 
-    trigger OnInsert()
-    begin
+//     trigger OnInsert()
+//     begin
 
-    end;
+//     end;
 
-    trigger OnModify()
-    begin
+//     trigger OnModify()
+//     begin
 
-    end;
+//     end;
 
-    trigger OnDelete()
-    begin
+//     trigger OnDelete()
+//     begin
 
-    end;
+//     end;
 
-    trigger OnRename()
-    begin
+//     trigger OnRename()
+//     begin
 
-    end;
+//     end;
 
-}
+// }
