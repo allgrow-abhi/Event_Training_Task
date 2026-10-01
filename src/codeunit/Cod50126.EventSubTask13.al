@@ -21,7 +21,7 @@
 //         if customerLedgerEntry.FindSet() then
 //             repeat
 //                 Message('Overdue Amount %1, OverdueInvoices %2', overdueAmount, overdueInvoices);
-//                 overdueAmount := overdueAMount + customerLedgerEntry."Remaining Amount";
+//                 overdueAmount := overdueAmount + customerLedgerEntry."Remaining Amount";
 //                 overdueInvoices := OverdueInvoices + 1;
 //             until customerLedgerEntry.Next() = 0;
 

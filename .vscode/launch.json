@@ -7,7 +7,7 @@
             "type": "al",
             "environmentType": "Sandbox",
             "tenant": "527bb1a8-9158-41ca-a990-67c1d3ed38a4",
-            "environmentName": "AGTTRAINING",
+            "environmentName": "TRAINING",
             "startupObjectId": 22,
             "startupObjectType": "Page",
             "breakOnError": "All",
@@ -18,3 +18,25 @@
         }
     ]
 }
+
+// {
+//     "version": "0.2.0",
+//     "configurations": [
+//         {
+//             "name": "BC230 Local OnPrem",
+//             "request": "launch",
+//             "type": "al",
+//             "environmentType": "OnPrem",
+//             "server": "http://ALGS02",
+//             "serverInstance": "BCDEMO11",
+//             "port": 8049,
+//             "authentication": "Windows",
+//             "startupObjectId": 22,
+//             "startupObjectType": "Page",
+//             "breakOnError": "All",
+//             "launchBrowser": true,
+//             "enableLongRunningSqlStatements": true,
+//             "enableSqlInformationDebugger": true
+//         }
+//     ]
+// }
