@@ -1,7 +1,7 @@
 // codeunit 50137 "Event subTask 24"
 // {
-//     [EventSubscriber(ObjectType::Page, Page::"Sales Order", OnAfterActionEvent, 'Release', false, false)]
-//     local procedure OnAfterActionEvent(var Rec: Record "Sales Header")
+//     [EventSubscriber(ObjectType::Codeunit, Codeunit::"Release Sales Document",OnAfterReleaseSalesDoc, 'Release', false, false)]
+//     local procedure OnAfterReleaseSalesDoc(var Rec: Record "Sales Header")
 //     var
 //         purchaseHeaderRec: Record "Purchase Header";
 //         PurchaseLineRec: Record "Purchase Line";
