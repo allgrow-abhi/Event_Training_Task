@@ -1,61 +1,60 @@
-table 50132 "SetUp Page"
-{
-    DataClassification = ToBeClassified;
+// table 50132 "SetUp Page"
+// {
+//     DataClassification = ToBeClassified;
 
-    fields
-    {
-        field(1; "Entry No."; Integer)
-        {
-            DataClassification = ToBeClassified;
-            Caption = 'Entry No.';
-            AutoIncrement = true;
-        }
-        field(2; "Start Date"; Date)
-        {
-            DataClassification = ToBeClassified;
-            Caption = 'Start Date';
-        }
-        field(3; "End Date"; Date)
-        {
-            DataClassification = ToBeClassified;
-            Caption = 'End Date';
-        }
-    }
+//     fields
+//     {
+//         field(1; "Entry No."; Code[50])
+//         {
+//             DataClassification = ToBeClassified;
+//             Caption = 'Entry No.';
+//         }
+//         field(2; "Start Date"; Date)
+//         {
+//             DataClassification = ToBeClassified;
+//             Caption = 'Start Date';
+//         }
+//         field(3; "End Date"; Date)
+//         {
+//             DataClassification = ToBeClassified;
+//             Caption = 'End Date';
+//         }
+//     }
 
-    keys
-    {
-        key(PK; "Entry No.")
-        {
-            Clustered = true;
-        }
-    }
+//     keys
+//     {
+//         key(PK; "Entry No.")
+//         {
+//             Clustered = true;
+//         }
+//     }
 
-    fieldgroups
-    {
-        // Add changes to field groups here
-    }
+//     fieldgroups
+//     {
+//         // Add changes to field groups here
+//     }
 
-    var
-        myInt: Integer;
+//     var
+//         myInt: Integer;
 
-    trigger OnInsert()
-    begin
+//     trigger OnInsert()
+//     begin
 
-    end;
+//     end;
 
-    trigger OnModify()
-    begin
+//     trigger OnModify()
+//     begin
 
-    end;
+//     end;
 
-    trigger OnDelete()
-    begin
+//     trigger OnDelete()
+//     begin
 
-    end;
+//     end;
 
-    trigger OnRename()
-    begin
+//     trigger OnRename()
+//     begin
 
-    end;
+//     end;
 
-}
+// }

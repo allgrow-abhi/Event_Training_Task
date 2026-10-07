@@ -1,9 +1,9 @@
 page 50133 "Overdue Invoice Email"
 {
-    PageType = Card;
+    PageType = List;
     ApplicationArea = All;
     UsageCategory = Administration;
-    SourceTable = "Overdue Invoice Email";
+    SourceTable = Customer;
 
     layout
     {
@@ -11,27 +11,15 @@ page 50133 "Overdue Invoice Email"
         {
             repeater(GroupName)
             {
-                field("Customer No"; Rec."Customer No")
+                field("No"; Rec."No.")
                 {
                     ApplicationArea = all;
                 }
-                field("Customer Name"; Rec."Customer Name")
+                field("Name"; Rec.Name)
                 {
                     ApplicationArea = all;
                 }
-                field("Email"; Rec.Email)
-                {
-                    ApplicationArea = all;
-                }
-                field("Invoice No"; Rec."Invoice No")
-                {
-                    ApplicationArea = all;
-                }
-                field("Due Date"; Rec."Due Date")
-                {
-                    ApplicationArea = all;
-                }
-                field("Amount"; Rec.Amount)
+                field("Email"; Rec."E-Mail")
                 {
                     ApplicationArea = all;
                 }
@@ -43,17 +31,91 @@ page 50133 "Overdue Invoice Email"
     {
         area(Processing)
         {
-            action(ActionName)
+
+            action(PostingDateSetUp)
             {
-
                 trigger OnAction()
+                var
+                    SetUpRec: Record "SetUp Page";
                 begin
-
+                    SetUpRec.Get('SETUP');
+                    Page.RunModal(Page::"SetUp Page AS", SetupRec);
+                    CurrPage.Update(false);
                 end;
             }
+            action(GetOverDueInvoices)
+            {
+                trigger OnAction()
+                begin
+                    LoadOverDueCustomer();
+                    Message('LoadOverDueCustomer Function Runs');
+                end;
+            }
+
+            action(SendRemainderEmailCustomer)
+            {
+                trigger OnAction()
+                begin
+                    SendReMainderEmail();
+                    Message('SendRemainderEmail Function Runs');
+                end;
+            }
+
         }
     }
 
+    local procedure LoadOverDueCustomer()
     var
-        myInt: Integer;
+        CustomerLedgerEntryRec: Record "Cust. Ledger Entry";
+        CustomerRec: Record Customer;
+        SetUpRec: Record "SetUp Page";
+    begin
+        CustomerLedgerEntryRec.Reset();
+
+        CustomerLedgerEntryRec.SetRange("Document Type", CustomerLedgerEntryRec."Document Type"::Invoice);
+        CustomerLedgerEntryRec.SetRange("Posting Date", SetUpRec."Start Date", SetUpRec."End Date");
+        CustomerLedgerEntryRec.SetRange(Open, true);
+        CustomerLedgerEntryRec.SetFilter("Due Date", '<%1', Today);
+
+        if CustomerLedgerEntryRec.FindSet() then begin
+            repeat
+                if CustomerRec.Get(CustomerLedgerEntryRec."Document No.") then begin
+                    Rec.Reset();
+                    Rec.SetRange("No.", CustomerRec."No.");
+
+                    if Rec.IsEmpty() then begin
+                        Rec.Init();
+                        Rec."No." := CustomerRec."No.";
+                        Rec.Name := CustomerRec.Name;
+                        Rec."E-Mail" := CustomerRec."E-Mail";
+                        Rec.Insert();
+                    end;
+                end;
+            until CustomerLedgerEntryRec.Next() = 0;
+            Message('OverDue Customer Entered');
+        end;
+    end;
+
+    local procedure SendReMainderEmail()
+    var
+        EmailRec: Codeunit Email;
+        EmailMessageRec: Codeunit "Email Message";
+        Subject: Text;
+        Body: Text;
+        countSent: Integer;
+    begin
+        Rec.Reset();
+        if Rec.FindSet() then begin
+            repeat
+                if Rec."E-Mail" <> '' then begin
+                    Subject := 'OverDue Invoice Remainder';
+                    Body := 'Dear ' + Rec."Name" + ' This is the Remainder regarding your overdue invoice';
+                    EmailMessageRec.Create(Rec."E-Mail", Subject, Body, true);
+                    EmailRec.Send(EmailMessageRec);
+                    countSent := countSent + 1;
+                end;
+            until Rec.Next() = 0;
+        end;
+        Message('Remainder Email Sent');
+    end;
 }
