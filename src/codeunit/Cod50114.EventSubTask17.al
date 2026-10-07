@@ -12,19 +12,10 @@ codeunit 50114 "Event SubTask 17"
     begin
         if Rec.Type <> Rec.Type::Item then
             exit;
-
         if Rec."No." = '' then
             exit;
-
-        if Rec."Location Code" = '' then
-            exit;
-
-        if Rec.Quantity = 0 then
-            exit;
-
         if not ItemRec.Get(Rec."No.") then
             exit;
-
         ItemRec.SetRange("Location Filter", Rec."Location Code");
         ItemRec.CalcFields(Inventory);
 
@@ -57,11 +48,6 @@ codeunit 50114 "Event SubTask 17"
         ItemJnLineRec.Validate("Quantity", ShortageQuantity);
 
         ItemJnLineRec.Insert(true);
-
-        Message('Item Journal Line Created');
-
         ItemJnPostRec.RunWithCheck(ItemJnLineRec);
-
-        Message('Item Journal Posted Successfully');
     end;
 }
