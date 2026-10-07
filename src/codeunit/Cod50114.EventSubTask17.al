@@ -15,10 +15,10 @@ codeunit 50114 "Event SubTask 17"
         ShortageQuantity: Decimal;
         NextLineNo: Integer;
     begin
-        Message('OnAfterValidateEvent Runs');
-        Message('1');
+        // Message('OnAfterValidateEvent Runs');
+        // Message('1');
         value := 1;
-        Message('2');
+        // Message('2');
         if ItemJnTemplateRec.FindLast() then begin
             value := value + 1;
             JournalTemplateName := 'ItemAB' + Format(value);
@@ -35,26 +35,26 @@ codeunit 50114 "Event SubTask 17"
                 ItemJnBatchRec.Insert();
             end;
         end;
-        Message('3');
+        // Message('3');
         if Rec.Type <> Rec.Type::Item then
             exit;
-        Message('4');
+        // Message('4');
         if Rec."No." = '' then
             exit;
-        Message('5');
+        // Message('5');
         if not ItemRec.Get(Rec."No.") then
             exit;
-        Message('6');
+        // Message('6');
         ItemRec.SetRange("Location Filter", Rec."Location Code");
-        Message('7');
+        // Message('7');
         ItemRec.CalcFields(Inventory);
-        Message('8');
+        // Message('8');
         AvailableQuantity := ItemRec.Inventory;
-        Message('9');
-        if Rec.Quantity >= AvailableQuantity then
-            Message('10');
-        ShortageQuantity := Rec.Quantity - AvailableQuantity;
-
+        // Message('9');
+        if Rec.Quantity > AvailableQuantity then
+            ShortageQuantity := Rec.Quantity - AvailableQuantity
+        else
+            exit;
         Message(
             'Available Qty = %1, Required Qty = %2, Shortage Qty = %3', AvailableQuantity, Rec.Quantity, ShortageQuantity);
         ItemJnLineRec.Reset();
@@ -78,6 +78,6 @@ codeunit 50114 "Event SubTask 17"
         ItemJnLineRec.Validate("Quantity", ShortageQuantity);
 
         ItemJnLineRec.Insert(true);
-        ItemJnPostRec.Run(ItemJnLineRec);
+        ItemJnPostRec.RunWithCheck(ItemJnLineRec);
     end;
 }
